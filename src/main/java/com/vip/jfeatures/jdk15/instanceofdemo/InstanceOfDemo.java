@@ -1,4 +1,4 @@
-package com.vip.jfeatures.jdk15;
+package com.vip.jfeatures.jdk15.instanceofdemo;
 
 public class InstanceOfDemo {
     public static void main(String[] args) {

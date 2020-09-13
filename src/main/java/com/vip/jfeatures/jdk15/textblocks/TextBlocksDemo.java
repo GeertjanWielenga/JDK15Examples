@@ -1,4 +1,4 @@
-package com.vip.jfeatures.jdk15;
+package com.vip.jfeatures.jdk15.textblocks;
 
 public class TextBlocksDemo {
     public static void main(String[] args) {

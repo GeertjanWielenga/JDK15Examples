@@ -1,22 +1,11 @@
 package com.vip.jfeatures.jdk15;
 
-import java.io.FileOutputStream;
-
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 
 import static org.objectweb.asm.Opcodes.*;
 
 public class GenerateClass {
-
-    public static void main(String[] args) throws Exception {
-        ClassWriter cw = getClassWriter(HiddenClassDemo.class);
-
-        //save bytecode into disk
-        FileOutputStream out = new FileOutputStream("/tmp/sample/HelloGen.class");
-        out.write(cw.toByteArray());
-        out.close();
-    }
 
     private static String getHiddenClassName(Class<?> lookupClass) {
         return lookupClass.getName().replace('.', '/') + "$$HiddenClass";
@@ -54,26 +43,3 @@ public class GenerateClass {
         return cw;
     }
 }
-
-/*
-
-    the java
-    source that
-    would compile
-    to the same
-
-class bytecode
-
-package sample;
-
-public class Hello {
-
-
-    public static void main(String[] args) {
-        System.out.println("Hello");
-    }
-
-}
-
-
-*/

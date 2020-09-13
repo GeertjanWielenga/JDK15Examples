@@ -18,8 +18,6 @@ public class HiddenClassDemo {
         byte[] bytes = cw.toByteArray();
 
         Class<?> c = lookup.defineHiddenClass(bytes, true, NESTMATE).lookupClass();
-        /*Test t = (Test) c.newInstance();
-        t.test();*/
 
         //todo create a method in hidden class and call here
 

@@ -45,18 +45,68 @@ public class InstanceOfDemo {
 
         /* Compilation error.
         This is example of || operator.
+
+        When obj is String it doesn't need to evaluate expression on right
+        side.
         When obj is not String, it doesn't get assigned into binding variable.
 
         The binding variable s is not in scope on the right hand side of the ||
         operator, nor is it in scope in the true block. s at these points refers
         to a field in the enclosing class, if any available, otherwise it
-        shows compilation error.s
-
+        shows compilation error.
 
         if (obj instanceof String s || s.length() > 3)
         {
             System.out.println(s.charAt(1));
         }*/
 
+        oldInstanceOf(obj);
+        newInstanceOf(obj);
+    }
+
+    private static void newInstanceOf(Object obj) {
+        String formatted = "unknown";
+        if (obj instanceof Integer i) {
+            formatted = String.format("int %d", i);
+        }
+        else if (obj instanceof Byte b) {
+            formatted = String.format("byte %d", b);
+        }
+        else if (obj instanceof Long l) {
+            formatted = String.format("long %d", l);
+        }
+        else if (obj instanceof Double d) {
+            formatted = String.format("double %f", d);
+        }
+        else if (obj instanceof String s) {
+            formatted = String.format("String %s", s);
+        }
+        System.out.println(formatted);
+    }
+
+    private static void oldInstanceOf(Object obj)
+    {
+        String formatted = "unknown";
+        if (obj instanceof Integer) {
+            int i = (Integer) obj;
+            formatted = String.format("int %d", i);
+        }
+        else if (obj instanceof Byte) {
+            byte b = (Byte) obj;
+            formatted = String.format("byte %d", b);
+        }
+        else if (obj instanceof Long) {
+            long l = (Long) obj;
+            formatted = String.format("long %d", l);
+        }
+        else if (obj instanceof Double) {
+            double d = (Double) obj;
+            formatted = String.format("double %f", d);
+        }
+        else if (obj instanceof String) {
+            String s = (String) obj;
+            formatted = String.format("String %s", s);
+        }
+        System.out.println(formatted);
     }
 }
